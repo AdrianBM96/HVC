@@ -1,0 +1,927 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>FexCall AI - Advanced Voice Assistant & Campaign Automation Module for Perfex CRM - Documentation</title>
+	<style>
+		/* Screen styles */
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			line-height: 1.6;
+			color: #333;
+			background: #fff;
+		}
+		
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+		
+		/* Print-specific styles for PDF conversion */
+		@media print {
+			/* Page setup */
+			@page {
+				margin: 1in;
+				size: A4;
+			}
+			
+			/* Body and container */
+			body {
+				font-size: 11pt;
+				line-height: 1.4;
+				color: #000 !important;
+				background: #fff !important;
+				-webkit-print-color-adjust: exact;
+				print-color-adjust: exact;
+			}
+			
+			.container {
+				width: 100% !important;
+				max-width: none !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			
+			/* Typography */
+			h1 { 
+				font-size: 20pt; 
+				font-weight: bold;
+				margin: 16pt 0 12pt 0;
+				page-break-after: avoid;
+			}
+			
+			h2 { 
+				font-size: 16pt; 
+				font-weight: bold;
+				margin: 14pt 0 10pt 0;
+				page-break-after: avoid;
+			}
+			
+			h3 { 
+				font-size: 14pt; 
+				font-weight: bold;
+				margin: 12pt 0 8pt 0;
+				page-break-after: avoid;
+			}
+			
+			h4 { 
+				font-size: 12pt; 
+				font-weight: bold;
+				margin: 10pt 0 6pt 0;
+				page-break-after: avoid;
+			}
+			
+			h5 { 
+				font-size: 11pt; 
+				font-weight: bold;
+				margin: 8pt 0 4pt 0;
+				page-break-after: avoid;
+			}
+			
+			p {
+				margin: 6pt 0;
+				orphans: 3;
+				widows: 3;
+			}
+			
+			/* Lists */
+			ul, ol {
+				margin: 6pt 0;
+				padding-left: 20pt;
+			}
+			
+			li {
+				margin: 3pt 0;
+				page-break-inside: avoid;
+			}
+			
+			/* Section management */
+			.section {
+				page-break-inside: avoid;
+				margin-bottom: 16pt;
+				padding-top: 8pt;
+			}
+			
+			/* Prevent breaks after headings */
+			h1, h2, h3, h4, h5, h6 {
+				page-break-after: avoid;
+			}
+			
+			/* Keep content boxes together */
+			div[style*="background"] {
+				page-break-inside: avoid;
+				margin: 8pt 0;
+				padding: 8pt;
+				border: 1pt solid #ccc;
+				border-radius: 3pt;
+			}
+			
+			/* Colored boxes - ensure they print well */
+			div[style*="#f8f9fa"] {
+				background-color: #f8f9fa !important;
+				border: 1pt solid #dee2e6 !important;
+			}
+			
+			div[style*="#e8f5e8"] {
+				background-color: #e8f5e8 !important;
+				border: 1pt solid #4caf50 !important;
+				border-left: 4pt solid #4caf50 !important;
+			}
+			
+			div[style*="#e3f2fd"] {
+				background-color: #e3f2fd !important;
+				border: 1pt solid #2196f3 !important;
+				border-left: 4pt solid #2196f3 !important;
+			}
+			
+			div[style*="#fff3e0"] {
+				background-color: #fff3e0 !important;
+				border: 1pt solid #ff9800 !important;
+				border-left: 4pt solid #ff9800 !important;
+			}
+			
+			div[style*="#ffebee"] {
+				background-color: #ffebee !important;
+				border: 1pt solid #f44336 !important;
+				border-left: 4pt solid #f44336 !important;
+			}
+			
+			div[style*="#f5f5f5"] {
+				background-color: #f5f5f5 !important;
+				border: 1pt solid #ccc !important;
+			}
+			
+			/* Images */
+			img {
+				max-width: 100% !important;
+				height: auto !important;
+				page-break-inside: avoid;
+				margin: 8pt 0;
+			}
+			
+			/* Links */
+			a {
+				color: #0066cc !important;
+				text-decoration: underline;
+			}
+			
+			/* Tables */
+			table {
+				border-collapse: collapse;
+				width: 100%;
+				font-size: 10pt;
+			}
+			
+			th, td {
+				border: 1pt solid #ccc;
+				padding: 4pt;
+				text-align: left;
+			}
+			
+			/* Strong emphasis */
+			strong, b {
+				font-weight: bold;
+				color: #000 !important;
+			}
+			
+			/* Table of contents */
+			ol li a {
+				color: #000 !important;
+			}
+			
+			/* Horizontal rules */
+			hr {
+				border: none;
+				border-top: 1pt solid #ccc;
+				margin: 12pt 0;
+			}
+			
+			/* Prevent widow/orphan lines */
+			* {
+				orphans: 3;
+				widows: 3;
+			}
+			
+			/* Force page breaks for major sections */
+			.section:nth-child(5n) {
+				page-break-after: always;
+			}
+			
+			h1[style*="text-align: center"] {
+				text-align: center !important;
+				font-size: 18pt;
+				font-weight: bold;
+				margin: 12pt 0;
+			}
+			
+			/* Ensure emojis and special characters print */
+			.emoji {
+				font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+			}
+		}
+		
+		/* Color preservation for important elements */
+		@media print and (color) {
+			div[style*="background"] {
+				-webkit-print-color-adjust: exact;
+				print-color-adjust: exact;
+			}
+		}
+	</style>
+</head>
+
+<body style="font-family: sans-serif;line-height: 1.7;">
+	<div class="container" style="width: 90%; margin: 0 auto;">
+
+		<h3 style="text-align: center;">&ldquo;FexCall AI - Advanced Voice Assistant & Campaign Automation Module for Perfex CRM&rdquo; Documentation &ldquo; v1.5.0&rdquo;</h3>
+		<hr>
+
+		<h1 style="text-align: center;">&ldquo;FexCall AI - Advanced Voice Assistant & Campaign Automation Module for Perfex CRM&rdquo;</h1>
+		<p><strong>Transform your business communication with AI-powered voice automation.</strong></p>
+		
+		<p>FexCall AI eliminates the need for human receptionists and cold calling teams by providing intelligent AI assistants that work 24/7. Whether you're handling inbound customer calls or running outbound sales campaigns, our AI assistants can:</p>
+		
+		<ul style="margin: 20px 0;">
+			<li><strong>Answer calls professionally</strong> - Never miss another customer inquiry with 24/7 AI receptionists</li>
+			<li><strong>Generate qualified leads</strong> - Automatically capture customer information and create leads in your CRM</li>
+			<li><strong>Run cold calling campaigns</strong> - Contact hundreds of prospects automatically without hiring sales teams</li>
+			<li><strong>Schedule appointments</strong> - AI can book meetings, consultations, and follow-ups directly in your calendar</li>
+			<li><strong>Provide instant support</strong> - Answer customer questions using your company's knowledge base</li>
+			<li><strong>Save costs dramatically</strong> - Replace expensive call center operations with intelligent automation</li>
+		</ul>
+		
+		<p>Perfect for businesses that want to scale their communication without scaling their staff costs. Works seamlessly with your existing Perfex CRM system.</p>
+
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+						Created: 09/12/2024<br>
+						Updated: 29/09/2025<br>
+						By: Amjad Abbas<br>
+						Email: <a href="mailto:support@myperfexcrm-help.freshdesk.com">support@myperfexcrm-help.freshdesk.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->
+
+			<div class="span-12 last">
+				<p class="prepend-top append-0">
+					Thank you for choosing the FexCall AI module for Perfex CRM. 
+					If you have any questions beyond the scope of this document, please feel free to contact us via email <a href="mailto:support@myperfexcrm-help.freshdesk.com">support@myperfexcrm-help.freshdesk.com</a>.</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		<hr>
+
+		<h3>MINIMUM SYSTEM REQUIREMENTS</h3>
+		<div class="borderTop">
+			<div class="span-12 colborder info prepend-1" style="width: 93%;">
+				<p class="prepend-top">
+					<strong>
+						Perfex CRM: 2.9.0 or higher<br>
+						PHP: 7.4 (recommended 8.1 or higher)<br>
+						MYSQL: 5.7 (recommended 8.0 or higher)
+					</strong>
+				</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		<hr>
+
+		<h2>Table of Contents</h2>
+		<ol>
+			<li><a href="#upload">Installation & Activation</a></li>
+			<li><a href="#quick_start">Quick Start Guide</a></li>
+			<li><a href="#details">Understanding FexCall AI</a></li>
+			<li><a href="#phone_setup">Phone Number Setup & Configuration</a></li>
+			<li><a href="#vapi">Configuring Vapi.ai (Primary AI Provider)</a></li>
+			<li><a href="#knowledge_base">Knowledge Base Setup (Vapi.ai Only)</a></li>
+			<li><a href="#bland">Configuring Bland.ai (Alternative AI Provider)</a></li>
+			<li><a href="#call_settings">Configuring Call Behavior</a></li>
+			<li><a href="#campaigns">Running Automated Cold Calling Campaigns (Vapi.ai Only)</a></li>
+			<li><a href="#ai_instructions">Writing Effective AI Instructions</a></li>
+			<li><a href="#lead_qualification">Lead Qualification & Scoring (Vapi.ai Only)</a></li>
+			<li><a href="#best_practices">Optimization & Best Practices</a></li>
+			<li><a href="#faq">FAQs</a></li>
+			<li><a href="#troubleshooting">Troubleshooting</a></li>
+		</ol>
+		<hr>
+
+		<ul>
+			<!-- Upload & Activate the Module -->
+			<li class="section" id="upload">
+				<h3><b>Upload & Activate the Module</b></h3>
+				<ol>
+					<li>Go to Perfex CRM's Admin area and select the following menu item: <b>SETUP > MODULES</b>.</li>
+					<li>Upload the <b>.zip file of FexCall AI</b> in the Module installation page and click <b>INSTALL</b>.
+						<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1759141181/Choose_Module_File_vdyh2l.png" style="width: 100%;margin-block: 18px;" />
+					</li>
+					
+					<li>Find the newly installed module (FexCall AI) and press <b>ACTIVATE</b>.
+						<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1759141181/Module_After_Installation_onbugx.png" style="width: 100%;margin-block: 18px;" />
+					</li>
+					<li>You will receive a confirmation alert indicating the module has been successfully activated.</li>
+					<li>After activation, new menu items will appear in your admin sidebar: <b>AI Call Logs</b> and <b>AI Campaigns</b></li>
+				</ol>
+			</li>
+
+			<!-- Quick Start Guide -->
+			<li class="section" id="quick_start">
+				<h3><b>Quick Start Guide</b></h3>
+				<p><strong>Get your AI assistant up and running in 15 minutes:</strong></p>
+				
+				<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+					<h4 style="color: #28a745; margin-top: 0;">🚀 Essential Setup Steps</h4>
+					<ol style="font-size: 16px; line-height: 1.6;">
+						<li><strong>Add Phone Numbers:</strong> Choose from free VAPI numbers, SIP, or import existing numbers (5 minutes)</li>
+						<li><strong>Choose AI Provider:</strong> Select Vapi.ai or Bland.ai and add API key (2 minutes)</li>
+						<li><strong>Write First Instructions:</strong> Tell your AI how to behave on calls (5 minutes)</li>
+						<li><strong>Test with a Call:</strong> Make your first AI call to verify everything works (3 minutes)</li>
+					</ol>
+					<p style="margin-bottom: 0;"><strong>That's it!</strong> Your AI assistant is now ready to handle calls 24/7 or run automated campaigns.</p>
+				</div>
+
+				<h4>What You'll Achieve After Setup:</h4>
+				<ul>
+					<li>✅ <strong>24/7 Phone Coverage:</strong> AI answers all calls professionally, even outside business hours</li>
+					<li>✅ <strong>Automatic Lead Capture:</strong> Every caller becomes a lead in your CRM with full conversation history</li>
+					<li>✅ <strong>Ready for Campaigns:</strong> Upload a CSV file and start automated cold calling immediately</li>
+					<li>✅ <strong>Cost Savings:</strong> No need to hire receptionists or cold calling teams</li>
+					<li>✅ <strong>Professional Image:</strong> Consistent, knowledgeable responses to all customer inquiries</li>
+				</ul>
+
+				<div style="background: #e3f2fd; padding: 15px; border-left: 4px solid #2196f3; margin: 20px 0;">
+					<p style="margin: 0;"><strong>💡 Pro Tip:</strong> Start by setting up inbound calls first - it's easier and you'll see immediate value when customers call your business number. Once comfortable, move on to outbound campaigns (requires Vapi.ai for full campaign features).</p>
+				</div>
+			</li>
+
+			<!-- Understanding FexCall AI -->
+			<li class="section" id="details">
+				<h3><b>Understanding FexCall AI</b></h3>
+				
+				<p><strong>FexCall AI transforms how your business handles phone communication by replacing human agents with intelligent AI assistants.</strong></p>
+
+				<h4>🎯 Main Features:</h4>
+				<ul>
+					<li><strong>Inbound Calls:</strong> AI answers calls 24/7, qualifies leads, books appointments</li>
+					<li><strong>Outbound Campaigns:</strong> Upload contacts and run automated calling campaigns</li>
+					<li><strong>Smart Knowledge:</strong> AI uses your documents to answer customer questions</li>
+					<li><strong>Lead Management:</strong> Automatic lead creation with call history</li>
+					<li><strong>Multiple Providers:</strong> Choose between Vapi.ai or Bland.ai</li>
+				</ul>
+
+				<h4>🔧 What You'll Find in Your CRM:</h4>
+				<ul>
+					<li><strong>Settings:</strong> Configure everything at <b>SETUP > SETTINGS > FexCall AI</b>
+						<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1759141181/General_Settings_ojbzta.png" style="width: 100%;margin-block: 18px;">
+					</li>
+					<li><strong>AI Call Logs:</strong> View all call history, transcripts, and analytics in one place</li>
+					<li><strong>AI Campaigns:</strong> Create and manage bulk calling campaigns</li>
+					<li><strong>Lead Integration:</strong> Every lead profile shows complete AI interaction history</li>
+					<li><strong>Make AI Call Button:</strong> Instantly call any lead with custom instructions</li>
+				</ul>
+			</li>
+
+		
+			<li class="section" id="call_settings">
+				<h3><b>Configure Call Settings</b></h3>
+				<ul>
+					<li>
+						<p>Inbound Call Settings</p>
+						<ol>
+							<li><b>First Sentence:</b> The first sentence that the assistant will say when someone calls.</li>
+							<li><b>System Prompt:</b> The system prompt configures the context, role, personality, and instructions for the assistant. This is used as the base prompt for all inbound calls.</li>
+							<li><b>Voice Assistant:</b> Choose between Vapi.ai or Bland.ai for handling inbound calls.</li>
+							<li><b>Knowledge Bases:</b> Select which knowledge bases the assistant can access during inbound calls.</li>
+						</ol>
+					</li>
+
+					<li>
+						<p>Outbound Call Settings</p>
+						<ol>
+							<li><b>First Sentence:</b> The opening message that the assistant will say when the lead picks up.</li>
+							<li><b>System Prompt:</b> The system prompt for outbound calls, defining the assistant's behavior and objectives.</li>
+							<li><b>Voice Assistant:</b> Choose the AI platform for outbound calls (can be different from inbound).</li>
+							<li><b>Tools & Knowledge Bases:</b> Configure which tools and knowledge bases are available for outbound calls.</li>
+						</ol>
+					</li>
+				</ul>
+			</li>
+
+		
+			<li class="section" id="phone_setup">
+				<h3><b>Phone Number Setup</b></h3>
+
+				<p><strong>Manage all your phone numbers through the VAPI.ai interface.</strong></p>
+
+				<ol>
+					<li><strong>Go to Settings:</strong> Navigate to <b>SETUP > SETTINGS > FexCall AI > Vapi.ai Settings > Phone Numbers</b></li>
+					<li><strong>Add Phone Number:</strong> Click "Add Phone Number" and choose from:
+						<ul>
+							<li><strong>Free VAPI Number</strong> - Get a free US phone number</li>
+							<li><strong>Free VAPI SIP</strong> - Use SIP integration</li>
+							<li><strong>BYO SIP Trunk Number</strong> - Bring your own SIP trunk</li>
+							<li><strong>Twilio Integration</strong> - Import Twilio number</li>
+						</ul>
+						<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1759141400/Add_Phone_Number_Modal_tuamde.png" style="width: 100%;margin-block: 18px;">
+					</li>
+					<li><strong>Assign to Assistant:</strong> Connect your phone number to an AI assistant</li>
+					<li><strong>Test:</strong> Make a test call to verify everything works</li>
+				</ol>
+				<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1759141494/Phone_Numbers_Management_a7mqo1.png" style="width: 100%;margin-block: 18px;">
+			</li>
+
+			<!-- Vapi.ai Settings -->
+			<li class="section" id="vapi">
+				<h3><b>Configuring Vapi.ai (AI Provider)</b></h3>
+				
+				<p><strong>Vapi.ai is one of the leading AI voice platforms that powers your automated calls.</strong> Complete this setup to enable AI-powered conversations.</p>
+				
+				<div style="background: #e3f2fd; padding: 15px; border-left: 4px solid #2196f3; margin: 20px 0;">
+					<p style="margin: 0;"><strong>📋 Prerequisites:</strong> You'll need a Vapi.ai account and API key. <a href="https://dashboard.vapi.ai/org/api-keys" target="_blank">Sign up here</a> if you don't have one.</p>
+				</div>
+
+				<h4>🔧 Essential Vapi.ai Configuration:</h4>
+				<ol>
+					<li><strong>API Key:</strong> 
+						<ul>
+							<li>Get your API key from <a href="https://dashboard.vapi.ai/org/api-keys" target="_blank">Vapi.ai Dashboard → API Keys</a></li>
+							<li>Enter it in the FexCall AI settings</li>
+							<li>This enables all AI voice capabilities</li>
+						</ul>
+					</li>
+					<li><strong>Max Call Duration (seconds):</strong> 
+						<ul>
+							<li>Set the maximum length for any single call</li>
+							<li>Recommended: 600 seconds (10 minutes) for most business calls</li>
+							<li>Prevents runaway costs from extremely long conversations</li>
+						</ul>
+					</li>
+					<li><strong>Voice Provider & Selection:</strong>
+						<ul>
+							<li>Choose from PlayHT, ElevenLabs, or other supported providers</li>
+							<li>Each provider offers different voice qualities and languages</li>
+							<li>Select a professional, clear voice that matches your brand</li>
+							<li>Test different voices with sample calls</li>
+						</ul>
+					</li>
+				</ol>
+
+				<h4>⚙️ Advanced Vapi.ai Features:</h4>
+				<ol>
+					<li><strong>Conversation Controls:</strong>
+						<ul>
+							<li><strong>Temperature (0-1):</strong> Controls AI creativity - use 0.3-0.7 for business calls</li>
+							<li><strong>Max Tokens:</strong> Limits response length - prevents overly long AI responses</li>
+						</ul>
+					</li>
+					<li><strong>Smart Conversation Features:</strong>
+						<ul>
+							<li><strong>Emotion Detection:</strong> AI can detect anger, joy, frustration and adjust accordingly</li>
+							<li><strong>Filler Injection:</strong> Adds "um", "uh" for more natural conversations</li>
+							<li><strong>Back Channeling:</strong> AI gives supportive responses during customer speech</li>
+							<li><strong>End Call Function:</strong> AI can end calls when objectives are met</li>
+							<li><strong>Dial Keypad Function:</strong> Enables touch-tone input during calls</li>
+						</ul>
+					</li>
+				</ol>
+
+				<div style="background: #f0f8f0; padding: 15px; border-radius: 8px; margin: 20px 0;">
+					<h4 style="color: #28a745; margin-top: 0;">✅ What Happens After Vapi.ai Setup:</h4>
+					<ul style="margin-bottom: 0;">
+						<li>Your AI assistant can handle voice calls with human-like conversations</li>
+						<li>File upload and knowledge base creation becomes available</li>
+						<li>You can start making test calls to verify everything works</li>
+						<li>Campaign system is ready for bulk automated calling</li>
+					</ul>
+				</div>
+
+				<p><strong>Next Step:</strong> Once Vapi.ai is configured, you can upload files and create knowledge bases to make your AI assistant even smarter.</p>
+				
+				<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1759141181/Vapi.AI_Settings_-_Basic_Configuration_syyoa8.png" style="width: 100%;margin-block: 18px;">
+			</li>
+
+			<!-- Knowledge Base Management (Vapi.ai Only) -->
+			<li class="section" id="knowledge_base">
+				<h3><b>Knowledge Base Setup (Vapi.ai Only)</b></h3>
+				
+				<div style="background: #ffebee; padding: 15px; border-left: 4px solid #f44336; margin: 20px 0;">
+					<p style="margin: 0;"><strong>📌 Important:</strong> Knowledge Base and File Upload functionality is currently available for <strong>Vapi.ai only</strong>. Support for Bland.ai will be added in future updates.</p>
+				</div>
+				
+				<p><strong>Knowledge bases make your AI assistant incredibly smart by giving it access to your company's information.</strong> When customers ask questions, your AI can provide accurate answers from your documents.</p>
+
+				<div style="background: #e8f5e8; padding: 15px; border-left: 4px solid #4caf50; margin: 20px 0;">
+					<h4 style="color: #2e7d32; margin-top: 0;">🧠 Why Knowledge Bases Are Powerful:</h4>
+					<ul style="margin-bottom: 0;">
+						<li><strong>Instant Expertise:</strong> AI can answer complex questions about your products/services immediately</li>
+						<li><strong>Consistent Information:</strong> Every caller gets the same accurate information</li>
+						<li><strong>Reduced Training:</strong> No need to train AI on every possible question</li>
+						<li><strong>Always Updated:</strong> Upload new documents anytime to keep information current</li>
+					</ul>
+				</div>
+
+				<h4>📚 What Documents Work Best:</h4>
+				<ul>
+					<li><strong>Product Catalogs</strong> - Features, specifications, pricing</li>
+					<li><strong>FAQ Documents</strong> - Common questions and answers</li>
+					<li><strong>Service Information</strong> - How your services work, pricing, policies</li>
+					<li><strong>Company Policies</strong> - Terms, conditions, procedures</li>
+					<li><strong>Training Materials</strong> - Step-by-step guides, tutorials</li>
+					<li><strong>Contact Information</strong> - Office hours, locations, emergency contacts</li>
+				</ul>
+
+				<h4>📁 Step 1: Upload Your Files</h4>
+				<p><strong>Location:</strong> Navigate to <b>SETUP > SETTINGS > FexCall AI > Vapi.ai Settings</b> and find the Knowledge Base section.</p>
+				
+				<div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+					<h5 style="margin-top: 0;">💾 Supported File Types & Tips:</h5>
+					<ul style="margin-bottom: 0;">
+						<li><strong>Formats:</strong> PDF, DOC, DOCX, TXT, MD, CSV, JSON, XML, LOG, TSV, YAML</li>
+						<li><strong>Size Limit:</strong> 300KB per file (keep documents focused and concise)</li>
+						<li><strong>Best Practice:</strong> Split large documents into focused topics</li>
+						<li><strong>Text Quality:</strong> Clean, well-structured text works best</li>
+					</ul>
+				</div>
+
+				<ol>
+					<li>Click the <strong>"Upload File"</strong> button in the Vapi.ai settings</li>
+					<li>Select your document file from your computer</li>
+					<li>Wait for processing - the file becomes available for knowledge base creation</li>
+					<li>Repeat for all documents you want to include</li>
+				</ol>
+				<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1759141723/Knowledgebase_File_Upload_rxnpoi.png" style="width: 100%;margin-block: 18px;">
+
+				<h4>🏗️ Step 2: Create Knowledge Bases</h4>
+				<p><strong>Think of this as creating "expert topics" for your AI assistant.</strong> Group related files into focused knowledge areas.</p>
+
+				<ol>
+					<li><strong>Click "Create Knowledge Base"</strong> (appears after uploading files)</li>
+					<li><strong>Choose a Descriptive Name:</strong>
+						<ul>
+							<li>Examples: "Product Information", "Pricing & Packages", "Technical Support"</li>
+							<li>Be specific - this helps you manage multiple knowledge bases</li>
+						</ul>
+					</li>
+					<li><strong>Write a Clear Description:</strong>
+						<ul>
+							<li>Explain when the AI should use this knowledge base</li>
+							<li>Example: "Use this when customers ask about product features, specifications, or comparisons"</li>
+						</ul>
+					</li>
+					<li><strong>Select Relevant Files:</strong>
+						<ul>
+							<li>Check all uploaded files that relate to this topic</li>
+							<li>You can use the same file in multiple knowledge bases</li>
+						</ul>
+					</li>
+					<li><strong>Save the Knowledge Base</strong> - it's now ready for use!</li>
+				</ol>
+				<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1759141862/Knowledgebase_Craetion_vggyn2.png" style="width: 100%;margin-block: 18px;">
+
+				<h4>🎯 Step 3: Assign Knowledge Bases</h4>
+				<p><strong>Now tell your AI when to use each knowledge base:</strong></p>
+				<ul>
+					<li><strong>Global Inbound Calls:</strong> All incoming calls can access these knowledge bases</li>
+					<li><strong>Global Outbound Calls:</strong> All campaign calls can use this information</li>
+					<li><strong>Specific Campaigns:</strong> Choose different knowledge bases for different campaign types</li>
+					<li><strong>Individual Manual Calls:</strong> Select knowledge bases for one-off calls</li>
+				</ul>
+
+				<div style="background: #e3f2fd; padding: 15px; border-left: 4px solid #2196f3; margin: 20px 0;">
+					<h4 style="color: #1976d2; margin-top: 0;">💡 Pro Tips for Better Results:</h4>
+					<ul style="margin-bottom: 0;">
+						<li><strong>Start Small:</strong> Create 1-2 focused knowledge bases first</li>
+						<li><strong>Test Thoroughly:</strong> Make test calls to verify AI gives correct answers</li>
+						<li><strong>Update Regularly:</strong> Replace files when information changes</li>
+						<li><strong>Be Specific:</strong> Multiple focused knowledge bases work better than one large one</li>
+					</ul>
+				</div>
+
+				<h4>🔧 Managing Your Knowledge Bases:</h4>
+				<ul>
+					<li><strong>View All Knowledge Bases:</strong> See everything from the settings panel</li>
+					<li><strong>Edit Existing:</strong> Update names, descriptions, or included files</li>
+					<li><strong>Delete Unused:</strong> Remove outdated knowledge bases to keep things organized</li>
+					<li><strong>Monitor Usage:</strong> Check call logs to see how often knowledge bases are used</li>
+				</ul>
+			</li>
+
+			<!-- Bland.ai Settings (Alternative) -->
+			<li class="section" id="bland">
+				<h3><b>Configuring Bland.ai (Alternative AI Provider)</b></h3>
+				
+				<p><strong>Bland.ai is an alternative AI voice platform.</strong> You only need to set up ONE AI provider - either Vapi.ai OR Bland.ai.</p>
+				
+				<div style="background: #fff3e0; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+					<p style="margin: 0;"><strong>⚠️ Note:</strong> Choose either Vapi.ai or Bland.ai, not both. Most users prefer Vapi.ai for its advanced features and knowledge base support.</p>
+				</div>
+
+				<div style="background: #ffebee; padding: 15px; border-left: 4px solid #f44336; margin: 20px 0;">
+					<h4 style="color: #c62828; margin-top: 0;">🚧 Feature Limitations with Bland.ai:</h4>
+					<ul style="margin-bottom: 0;">
+						<li><strong>Knowledge Base & File Upload:</strong> Currently not supported (coming in future updates)</li>
+						<li><strong>Automated Campaigns:</strong> Campaign management not yet available (coming soon)</li>
+						<li><strong>Lead Qualification & Scoring:</strong> Advanced scoring features not supported yet</li>
+						<li><strong>Full Feature Access:</strong> Use Vapi.ai for complete functionality</li>
+					</ul>
+				</div>
+
+				<ol>
+					<li><strong>API Key:</strong> Get your API key from <a href="https://app.bland.ai/dashboard/settings" target="_blank">Bland.ai Dashboard Settings</a></li>
+					<li><strong>Phone Number Assignment:</strong>  Select which phone number to use for both inbound and outbound calls. Choose from your existing phone numbers.</li>
+					<li><strong>Max Call Duration (minutes):</strong> Set the maximum call length in minutes</li>
+					<li><strong>Voice Selection:</strong> Choose from available voice options and custom voice clones</li>
+					<li><strong>Temperature (0-1):</strong> Controls randomness - 0 for deterministic, 1 for creative responses</li>
+					<li><strong>Basic Call Settings:</strong> Configure fundamental call behavior and AI instructions</li>
+					<li><strong>Tools Configuration:</strong> Set up additional integrations and functionality
+						<img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1759142025/Bland.AI_Settings_-_Basic_Configuration_m2trz8.png" style="width: 100%;margin-block: 18px;">
+					</li>
+				</ol>
+			</li>
+
+			<!-- Campaign Management System (Vapi.ai Only) -->
+			<li class="section" id="campaigns">
+				<h3><b>Campaign Management System (Vapi.ai Only)</b></h3>
+				
+				<div style="background: #ffebee; padding: 15px; border-left: 4px solid #f44336; margin: 20px 0;">
+					<p style="margin: 0;"><strong>📌 Important:</strong> Automated Campaign functionality is currently available for <strong>Vapi.ai only</strong>. Support for Bland.ai campaigns will be added in future updates.</p>
+				</div>
+				<ol>
+					<li><b>Accessing Campaigns:</b> Click on <b>AI Campaigns</b> in the main sidebar menu to access the campaign dashboard.</li>
+					<li><b>Campaign Dashboard:</b> View all campaigns with real-time statistics including:
+						<ul>
+							<li>Total contacts in each campaign</li>
+							<li>Calls completed, pending, and failed</li>
+							<li>Campaign progress percentages</li>
+							<li>Campaign status (Draft, Running, Paused, Completed)</li>
+						</ul>
+						<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1754562553/Screenshot_at_Aug_07_15-29-02_b8hwie.png" style="width: 100%;margin-block: 18px;">
+					</li>
+					<li><b>Creating a New Campaign:</b>
+						<ol>
+							<li>Click "New Campaign" button</li>
+							<li>Enter campaign name and description</li>
+							<li>Upload CSV file with contact information (download template provided)</li>
+							<li>Configure AI settings:
+								<ul>
+									<li>Assistant prompt (custom instructions for this campaign)</li>
+									<li>First message (opening greeting)</li>
+									<li>Maximum call attempts per contact</li>
+									<li>Lead qualification settings</li>
+									<li>Evaluation prompts for call success scoring</li>
+								</ul>
+							</li>
+							<li>Select knowledge bases specific to this campaign</li>
+							<li>Choose schedule type (immediate or scheduled)</li>
+							<li>Launch the campaign</li>
+						</ol>
+						<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1754562021/Screenshot_at_Aug_07_15-20-07_hx2ox9.png" style="width: 100%;margin-block: 18px;">
+					</li>
+					<li><b>CSV File Format:</b> Your CSV file should include columns for:
+						<ul>
+							<li>phone_number (required)</li>
+							<li>customer_name</li>
+							<li>email</li>
+							<li>company</li>
+							<li>address, city, state, country, zip_code</li>
+							<li>description (campaign-specific notes about the lead)</li>
+						</ul>
+						<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1754562372/Screenshot_at_Aug_07_15-25-57_hkejyh.png" style="width: 100%;margin-block: 18px;">
+					</li>
+					<li><b>Campaign Monitoring:</b>
+						<ul>
+							<li>View real-time progress on the campaign dashboard with live statistics</li>
+							<li>Access detailed campaign view with comprehensive timeline and metrics</li>
+							<li>Monitor individual call attempts and outcomes with detailed call logs</li>
+							<li>Enhanced progress tracking with visual progress bars and completion percentages</li>
+							<li>Real-time campaign statistics including success rates, call durations, and lead conversion</li>
+							<li>Comprehensive call logs table with filtering, sorting, and export capabilities</li>
+							<li>Export campaign results and analytics for external reporting</li>
+						</ul>
+						<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1754562474/Screenshot_at_Aug_07_15-27-36_f8ondk.png" style="width: 100%;margin-block: 18px;">
+					</li>
+					<li><b>Campaign Controls:</b>
+						<ul>
+							<li><b>Start/Resume:</b> Begin or continue campaign execution</li>
+							<li><b>Pause:</b> Temporarily halt campaign processing</li>
+							<li><b>Cancel:</b> Stop campaign permanently</li>
+							<li><b>Delete:</b> Remove campaign and all associated data</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+
+			<!-- Lead Profile Integration -->
+			<li class="section" id="lead_integration">
+				<h3><b>Lead Profile</b></h3>
+				<ol>
+					<li><b>AI Call Logs Tab:</b> Each lead profile now includes a dedicated "AI Call Logs" tab showing:
+						<ul>
+							<li>All calls made to this specific lead</li>
+							<li>Call outcomes and transcripts</li>
+							<li>Success evaluations and scores</li>
+							<li>Quick access to make new calls</li>
+						</ul>
+						<br><img src="https://res.cloudinary.com/ddcghfbsv/image/upload/v1754562737/Screenshot_at_Aug_07_15-31-27_j5dfuk.png" style="width: 100%;margin-block: 18px;">
+					</li>
+					<li><b>Make AI Call Button:</b> Prominently displayed on lead profiles for quick access to manual calling</li>
+					<li><b>Call Status:</b> Lead list now shows the last call status for each lead:
+						<ul>
+							<li>Customer ended call</li>
+							<li>Assistant ended call</li>
+							<li>No answer</li>
+							<li>Busy signal</li>
+							<li>Failed</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+
+			<!-- Writing Effective AI Instructions -->
+			<li class="section" id="ai_instructions">
+				<h3><b>Writing Effective AI Instructions</b></h3>
+				<p><strong>Your AI assistant is only as good as the instructions you provide.</strong> Well-crafted prompts are the key to successful campaigns and satisfied customers.</p>
+				
+				<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+					<h4 style="color: #28a745; margin-top: 0;">🎯 Essential Elements of Great AI Instructions</h4>
+					<ul style="margin-bottom: 0;">
+						<li><strong>Clear Objective:</strong> Define exactly what the AI should accomplish</li>
+						<li><strong>Company Identity:</strong> Establish tone, personality, and brand voice</li>
+						<li><strong>Conversation Flow:</strong> Guide how the AI should structure the call</li>
+						<li><strong>Boundary Setting:</strong> Specify what the AI should and shouldn't do</li>
+					</ul>
+				</div>
+
+				<ol>
+					<li><b>Inbound Call Instructions:</b> Configure how AI handles incoming calls
+						<ul>
+							<li><strong>Professional Greeting:</strong> "You are a professional receptionist for [Company Name]. Always greet callers warmly and identify yourself."</li>
+							<li><strong>Information Gathering:</strong> "Ask for caller's name, company, and reason for calling. Take detailed messages for unavailable staff."</li>
+							<li><strong>Knowledge Base Usage:</strong> "Use the company knowledge base to answer frequently asked questions about services, pricing, and policies."</li>
+							<li><strong>Escalation Rules:</strong> "For complex technical issues or urgent matters, offer to transfer to appropriate department or take detailed callback information."</li>
+						</ul>
+					</li>
+					
+					<li><b>Outbound Campaign Instructions:</b> Customize AI behavior for cold calling
+						<ul>
+							<li><strong>Opening Hook:</strong> "Introduce yourself and company, then immediately provide value or ask permission to continue."</li>
+							<li><strong>Pain Point Discovery:</strong> "Ask open-ended questions to understand their current challenges with [your solution area]."</li>
+							<li><strong>Value Proposition:</strong> "Clearly explain how your solution addresses their specific pain points."</li>
+							<li><strong>Call to Action:</strong> "Guide conversation toward scheduling a demo, consultation, or next meeting."</li>
+							<li><strong>Objection Handling:</strong> "If they say 'not interested,' ask one clarifying question to understand why before gracefully ending."</li>
+						</ul>
+					</li>
+					
+					<li><b>Sample Templates:</b>
+						<div style="background: #e3f2fd; padding: 15px; border-left: 4px solid #2196f3; margin: 15px 0;">
+							<h5><strong>Inbound Support Template:</strong></h5>
+							<p style="font-style: italic; margin: 10px 0;">"You are Sarah, a friendly and professional customer service representative for TechCorp Solutions. Your role is to provide excellent customer support, answer questions about our software products, and help customers resolve issues. Always be patient, empathetic, and solution-focused. If you don't know an answer, admit it and offer to connect them with someone who can help. Use the knowledge base to provide accurate information about our products, pricing, and policies. For technical issues beyond basic troubleshooting, offer to schedule a callback with our technical team."</p>
+						</div>
+						
+						<div style="background: #fff3e0; padding: 15px; border-left: 4px solid #ff9800; margin: 15px 0;">
+							<h5><strong>Sales Campaign Template:</strong></h5>
+							<p style="font-style: italic; margin: 10px 0;">"You are Alex, a consultative sales representative for MarketingPro Agency. You're calling small business owners to help them improve their digital marketing ROI. Start by asking about their current marketing challenges - don't pitch immediately. Listen to their specific pain points, then explain how our marketing automation platform has helped similar businesses increase leads by 40% while reducing costs. Your goal is to schedule a 15-minute demo, not to close a sale on this call. If they express interest, use the scheduling link to book a demo. If they're not ready, ask permission to follow up in 3 months and send helpful resources."</p>
+						</div>
+					</li>
+					
+					<li><b>Advanced Instruction Techniques:</b>
+						<ul>
+							<li><strong>Persona Development:</strong> Give your AI a name and personality for more natural conversations</li>
+							<li><strong>Scenario Planning:</strong> Include instructions for common situations and objections</li>
+							<li><strong>Compliance Guidelines:</strong> Include industry-specific regulations and do-not-call considerations</li>
+							<li><strong>Data Collection:</strong> Specify exactly what information to gather and how to store it</li>
+							<li><strong>Follow-up Actions:</strong> Define when and how AI should trigger next steps or alerts</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+
+			<!-- Lead Qualification & Scoring (Vapi.ai Only) -->
+			<li class="section" id="lead_qualification">
+				<h3><b>Lead Qualification & Scoring (Vapi.ai Only)</b></h3>
+				
+				<div style="background: #ffebee; padding: 15px; border-left: 4px solid #f44336; margin: 20px 0;">
+					<p style="margin: 0;"><strong>📌 Important:</strong> Advanced Lead Qualification features are currently available for <strong>Vapi.ai only</strong>. Support for Bland.ai will be added in future updates.</p>
+				</div>
+				
+				<p><strong>Automatically qualify leads during conversations and prioritize follow-ups based on AI-powered scoring.</strong></p>
+				
+				<ol>
+					<li><b>Qualification Criteria Setup:</b>
+						<ul>
+							<li><strong>Budget Qualification:</strong> "Ask about budget ranges without being too direct - 'What's typically allocated for this type of solution?'"</li>
+							<li><strong>Authority Discovery:</strong> "Identify decision-makers - 'Who else would be involved in evaluating this type of solution?'"</li>
+							<li><strong>Need Assessment:</strong> "Uncover pain points and urgency - 'What's driving you to look for a solution now?'"</li>
+							<li><strong>Timeline Identification:</strong> "Understand buying timeline - 'When are you looking to have this implemented?'"</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+
+			<!-- Best Practices & Tips -->
+			<li class="section" id="best_practices">
+				<h3><b>Best Practices & Tips</b></h3>
+				<ol>
+					<li><b>Campaign Optimization:</b>
+						<ul>
+							<li>Start with small test campaigns (50-100 contacts) before scaling</li>
+							<li>A/B test different AI prompts and first messages</li>
+							<li>Monitor success rates and adjust strategies accordingly</li>
+							<li>Use descriptive campaign names for easy management</li>
+						</ul>
+					</li>
+					<li><b>Knowledge Base Best Practices:</b>
+						<ul>
+							<li>Keep documents concise and well-structured</li>
+							<li>Use clear, conversational language in your knowledge bases</li>
+							<li>Regularly update knowledge bases with new information</li>
+							<li>Test knowledge base responses with manual calls first</li>
+						</ul>
+					</li>
+					<li><b>AI Prompt Optimization:</b>
+						<ul>
+							<li>Be specific about the call objective</li>
+							<li>Include your company's tone and personality</li>
+							<li>Provide clear instructions for different scenarios</li>
+							<li>Test prompts with various lead types</li>
+						</ul>
+					</li>
+					<li><b>Performance Monitoring:</b>
+						<ul>
+							<li>Review call transcripts regularly for quality improvement</li>
+							<li>Monitor success rates and adjust settings as needed</li>
+							<li>Use evaluation prompts to score call effectiveness</li>
+							<li>Export analytics for external reporting and analysis</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+			
+
+			<!-- FAQ -->
+			<li class="section" id="faq">
+				<h3><b>FAQs</b></h3>
+				<ol>
+					<li><b>Do I need any code changes to use the module?</b><br>
+						No, this module is designed to work out of the box with no code modifications required.
+					</li>
+					<li><b>Do I need Perfex CRM to use this Module?</b><br>
+						Yes, this module requires Perfex CRM to function. You can purchase Perfex CRM <a href="https://codecanyon.net/item/perfex-powerful-open-source-crm/14013737">here</a>.
+					</li>
+					<li><b>How many contacts can I include in a single campaign?</b><br>
+						There's no hard limit, but we recommend starting with campaigns of 1000 contacts or less for optimal performance. Larger campaigns can be processed but may take longer to complete.
+					</li>
+					<li><b>What file formats are supported for knowledge bases?</b><br>
+						Supported formats include PDF, DOC, DOCX, TXT, MD, CSV, JSON, XML, LOG, TSV, YAML with a maximum file size of 300KB per file.
+					</li>
+					<li><b>Can I use both Vapi.ai and Bland.ai simultaneously?</b><br>
+						No, you can only use one AI provider at a time. However, Vapi.ai currently offers more complete features including knowledge base support, automated campaigns, and advanced lead qualification.
+					</li>
+					<li><b>What features are currently available with each AI provider?</b><br>
+						<strong>Vapi.ai:</strong> Full feature set including knowledge bases, automated campaigns, lead qualification & scoring, file uploads, and advanced analytics.<br>
+						<strong>Bland.ai:</strong> Basic AI calling functionality. Knowledge bases, campaigns, and lead qualification features will be added in future updates.
+					</li>
+					<li><b>How do I monitor campaign progress?</b><br>
+						The campaign dashboard provides real-time statistics. You can also view detailed progress in individual campaign views and export reports for analysis.
+					</li>
+					<li><b>Are call recordings stored securely?</b><br>
+						Yes, all call recordings and transcripts are stored securely according to your AI provider's security standards and data protection policies.
+					</li>
+					<li><b>How do I get Support?</b><br>
+						For any support inquiries, please reach out to us via the email <a href="mailto:support@myperfexcrm-help.freshdesk.com">support@myperfexcrm-help.freshdesk.com</a>.
+					</li>
+				</ol>
+			</li>
+
+			<!-- Troubleshooting -->
+			<li class="section" id="troubleshooting">
+				<h3><b>Troubleshooting</b></h3>
+				<ol>
+					<li><b>Issue: The module is not activating.</b><br> 
+						Try re-uploading the module zip file and ensure you are using the latest version of Perfex CRM.
+					</li>
+					<li><b>Issue: Campaigns are not processing calls.</b><br>
+						Check that your AI provider API keys are valid and phone numbers are properly configured. Ensure the campaign status is set to "Running".
+					</li>
+					<li><b>Issue: Knowledge base files are not uploading.</b><br>
+						Verify that your files are under 300KB and in a supported format. Check your server's file upload limits and permissions.
+					</li>
+					<li><b>Issue: AI calls are failing with API errors.</b><br>
+						Verify your API keys for Vapi.ai or Bland.ai are correct and active. Check that your phone numbers are properly configured and your AI provider account has sufficient balance.
+					</li>
+					<li><b>Issue: Call logs are not showing transcripts.</b><br>
+						Transcripts may take a few minutes to process after call completion. Ensure your AI provider account has transcription services enabled.
+					</li>
+					<li><b>Issue: Manual calls are not working from lead profiles.</b><br>
+						Ensure the lead has a valid phone number and that your default AI provider settings are properly configured.
+					</li>
+					<li><b>Issue: Campaign CSV upload fails.</b><br>
+						Check that your CSV file follows the required format with proper column headers. Ensure phone numbers are in valid format (preferably E.164).
+					</li>
+				</ol>
+			</li>
+			<hr>
+
+		</ul>
+	</div>
+</body>
